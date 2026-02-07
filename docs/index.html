@@ -684,7 +684,7 @@
                 <p style="margin-top: 10px; color: #718096;">
                     Dates should be in format: MM/DD/YYYY or YYYY-MM-DD<br>
                     patient_age_category: "Adult" or "Pediatric"<br>
-                    pathologist: "Dr. Schultz" or "Dr. Dewar"<br>
+                    pathologist: "Dr. Y" or "Dr. X"<br>
                     Leave signout_date blank for pending cases
                 </p>
             </div>
@@ -718,8 +718,8 @@
                     <label>Pathologist Filter</label>
                     <select id="pathologist-filter">
                         <option value="all">All Pathologists</option>
-                        <option value="Dr. Schultz">Dr. Schultz</option>
-                        <option value="Dr. Dewar">Dr. Dewar</option>
+                        <option value="Dr. Y">Dr. Y</option>
+                        <option value="Dr. X">Dr. X </option>
                     </select>
                 </div>
                 <div class="control-group">
@@ -1213,7 +1213,7 @@
         }
 
         function calculatePathologistMetrics(cases) {
-            const pathologists = ['Dr. Schultz', 'Dr. Dewar'];
+            const pathologists = ['Dr. Y', 'Dr. X'];
             return pathologists.map(name => {
                 const pathCases = cases.filter(c => c.pathologist === name && !c.isPending);
                 const pending = cases.filter(c => c.pathologist === name && c.isPending);
